@@ -1,0 +1,202 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Institution {
+  id          String       @id @default(cuid())
+  name        String
+  code        String       @unique
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  researchers Researcher[]
+  grants      Grant[]
+}
+
+model Researcher {
+  id                    String           @id @default(cuid())
+  name                  String
+  email                 String           @unique
+  department            String
+  contractedHoursWeekly Float
+  employmentFraction    Float
+  annualSalary          Float
+  salaryEffectiveDate   DateTime
+  institutionId         String
+  institution           Institution      @relation(fields: [institutionId], references: [id])
+  createdAt             DateTime         @default(now())
+  updatedAt             DateTime         @updatedAt
+  timesheetPeriods      TimesheetPeriod[]
+  grantAllocations      GrantResearcher[]
+  // Grants where this researcher is PI
+  piGrants              Grant[]          @relation("PrincipalInvestigator")
+
+  @@index([institutionId])
+  @@index([email])
+}
+
+model Grant {
+  id                      String           @id @default(cuid())
+  funderProfileId         String
+  title                   String
+  reference               String           @unique
+  startDate               DateTime
+  endDate                 DateTime
+  fundedFTE               Float            @default(0)
+  totalStaffBudget        Float
+  principalInvestigatorId String
+  principalInvestigator   Researcher       @relation("PrincipalInvestigator", fields: [principalInvestigatorId], references: [id])
+  institutionId           String
+  institution             Institution      @relation(fields: [institutionId], references: [id])
+  createdAt               DateTime         @default(now())
+  updatedAt               DateTime         @updatedAt
+  timesheetEntries        TimesheetEntry[]
+  grantAllocations        GrantResearcher[]
+
+  @@index([institutionId])
+  @@index([reference])
+  @@index([funderProfileId])
+}
+
+// Junction table for grant-researcher allocations with funded FTE
+model GrantResearcher {
+  id           String     @id @default(cuid())
+  grantId      String
+  grant        Grant      @relation(fields: [grantId], references: [id])
+  researcherId String
+  researcher   Researcher @relation(fields: [researcherId], references: [id])
+  fundedFTE    Float
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@unique([grantId, researcherId])
+  @@index([grantId])
+  @@index([researcherId])
+}
+
+model TimesheetPeriod {
+  id               String           @id @default(cuid())
+  researcherId     String
+  researcher       Researcher       @relation(fields: [researcherId], references: [id])
+  year             Int
+  month            Int
+  status           TimesheetStatus  @default(DRAFT)
+  submittedAt      DateTime?
+  signedAt         DateTime?
+  countersignedAt  DateTime?
+  lockedAt         DateTime?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  entries          TimesheetEntry[]
+  nonGrantEntries  NonGrantEntry[]
+
+  @@unique([researcherId, year, month])
+  @@index([researcherId])
+  @@index([year, month])
+  @@index([status])
+}
+
+enum TimesheetStatus {
+  DRAFT
+  SUBMITTED
+  SIGNED
+  COUNTERSIGNED
+  LOCKED
+}
+
+model TimesheetEntry {
+  id                String          @id @default(cuid())
+  timesheetPeriodId String
+  timesheetPeriod   TimesheetPeriod @relation(fields: [timesheetPeriodId], references: [id])
+  grantId           String
+  grant             Grant           @relation(fields: [grantId], references: [id])
+  hours             Float
+  notes             String?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@unique([timesheetPeriodId, grantId])
+  @@index([timesheetPeriodId])
+  @@index([grantId])
+}
+
+model NonGrantEntry {
+  id                String          @id @default(cuid())
+  timesheetPeriodId String
+  timesheetPeriod   TimesheetPeriod @relation(fields: [timesheetPeriodId], references: [id])
+  category          NonGrantCategory
+  hours             Float
+  description       String?
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  @@index([timesheetPeriodId])
+}
+
+enum NonGrantCategory {
+  TEACHING
+  ADMIN
+  OTHER_RESEARCH
+  LEAVE
+  OTHER
+}
+
+model AuditLog {
+  id           String   @id @default(cuid())
+  entityType   String
+  entityId     String
+  action       String
+  previousData Json?
+  newData      Json?
+  performedBy  String
+  performedAt  DateTime @default(now())
+  ipAddress    String?
+
+  @@index([entityType, entityId])
+  @@index([performedBy])
+  @@index([performedAt])
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  passwordHash String
+  role         UserRole
+  researcherId String?  // Link to researcher profile if applicable
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([email])
+  @@index([role])
+}
+
+enum UserRole {
+  OFFICER
+  PI
+  RESEARCHER
+}
+
+model Reminder {
+  id           String        @id @default(cuid())
+  researcherId String
+  periodYear   Int
+  periodMonth  Int
+  level        ReminderLevel
+  sentAt       DateTime?
+  markedSentBy String?       // user ID who marked it as sent
+  createdAt    DateTime      @default(now())
+
+  @@index([researcherId, periodYear, periodMonth])
+}
+
+enum ReminderLevel {
+  FIRST
+  SECOND
+  ESCALATE_PI
+  ESCALATE_HEAD
+}
