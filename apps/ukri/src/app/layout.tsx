@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
+const inter = Inter({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
-  title: "UKRI Compliance",
-  description: "UKRI Compliance Application",
+  title: "FES Validator - UKRI Compliance",
+  description: "Find the rows that will fail your next UKRI audit",
 };
 
 export default function RootLayout({
@@ -13,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-sans antialiased">{children}</body>
+      <body className={`${inter.className} antialiased bg-gray-50`}>
+        {children}
+        <Toaster position="bottom-right" />
+      </body>
     </html>
   );
 }

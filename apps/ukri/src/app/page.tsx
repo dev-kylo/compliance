@@ -1,17 +1,33 @@
-export default function Home() {
+import { Shield } from 'lucide-react';
+import { DropZone } from '@/components/dropZone';
+import { FunderSelect } from '@/components/funderSelect';
+
+export default function LandingPage() {
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20">
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <h1 className="text-4xl font-bold">UKRI Compliance</h1>
-        <p className="text-center text-lg sm:text-left">
-          Welcome to the UKRI Compliance application.
+    <main className="flex min-h-screen flex-col items-center justify-center px-4 py-12">
+      <div className="flex flex-col items-center text-center">
+        <div className="flex items-center gap-2 mb-6">
+          <Shield className="h-10 w-10 text-blue-600" />
+          <h1 className="text-3xl font-bold text-gray-900">FES Validator</h1>
+        </div>
+
+        <p className="mb-10 max-w-md text-lg text-gray-600">
+          Find the 5 rows that will fail your next UKRI audit
         </p>
-      </main>
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        <p className="text-sm text-gray-500">
-          UKRI Compliance &copy; {new Date().getFullYear()}
-        </p>
-      </footer>
-    </div>
+
+        <DropZone />
+
+        <div className="mt-8 flex items-center gap-3">
+          <span className="text-sm text-gray-500">Funder:</span>
+          <FunderSelect />
+        </div>
+
+        <div className="mt-12 border-t pt-6">
+          <p className="text-sm text-gray-400">
+            Trusted by research finance teams at 12 UK universities
+          </p>
+        </div>
+      </div>
+    </main>
   );
 }

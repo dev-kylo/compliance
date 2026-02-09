@@ -1,0 +1,794 @@
+{
+  "metadata": {
+    "description": "FES Validator MVP Demo Data - Based on UKRI/TRAC requirements research",
+    "version": "1.0",
+    "notes": "All data is fictional but based on realistic UK university research finance patterns"
+  },
+
+  "grants": [
+    {
+      "id": "grant_001",
+      "reference": "EP/X029441/1",
+      "title": "Neural Interface Development for Assistive Technologies",
+      "funder": "UKRI - EPSRC",
+      "pi": {
+        "name": "Prof. Emma Richardson",
+        "department": "School of Engineering",
+        "email": "e.richardson@example.ac.uk"
+      },
+      "startDate": "2022-04-01",
+      "endDate": "2025-03-31",
+      "fesDeadline": "2025-06-30",
+      "daysUntilDeadline": 156,
+      "totalAwarded": 892450,
+      "totalSpent": 847291,
+      "fecRate": 0.80,
+      "status": "active",
+      "riskLevel": "high",
+      "summary": {
+        "totalTransactions": 4847,
+        "highRiskCount": 5,
+        "mediumRiskCount": 7,
+        "cleanCount": 4835,
+        "totalAtRisk": 47291,
+        "categories": {
+          "staffCosts": { "spent": 612450, "budget": 645000, "issues": 3, "atRisk": 31200 },
+          "equipment": { "spent": 89200, "budget": 95000, "issues": 2, "atRisk": 8450 },
+          "consumables": { "spent": 67891, "budget": 72000, "issues": 4, "atRisk": 4891 },
+          "travel": { "spent": 38450, "budget": 42000, "issues": 2, "atRisk": 2750 },
+          "other": { "spent": 39300, "budget": 38450, "issues": 1, "atRisk": 0 }
+        }
+      }
+    },
+    {
+      "id": "grant_002",
+      "reference": "EP/R018634/1",
+      "title": "Quantum Sensing Arrays for Environmental Monitoring",
+      "funder": "UKRI - EPSRC",
+      "pi": {
+        "name": "Dr. James Okafor",
+        "department": "Department of Physics",
+        "email": "j.okafor@example.ac.uk"
+      },
+      "startDate": "2021-10-01",
+      "endDate": "2024-09-30",
+      "fesDeadline": "2024-12-31",
+      "daysUntilDeadline": -25,
+      "totalAwarded": 456780,
+      "totalSpent": 448920,
+      "fecRate": 0.80,
+      "status": "closing",
+      "riskLevel": "medium",
+      "summary": {
+        "totalTransactions": 2341,
+        "highRiskCount": 1,
+        "mediumRiskCount": 3,
+        "cleanCount": 2337,
+        "totalAtRisk": 8445,
+        "categories": {
+          "staffCosts": { "spent": 298450, "budget": 305000, "issues": 1, "atRisk": 4200 },
+          "equipment": { "spent": 62300, "budget": 65000, "issues": 0, "atRisk": 0 },
+          "consumables": { "spent": 45670, "budget": 48000, "issues": 2, "atRisk": 3245 },
+          "travel": { "spent": 28500, "budget": 30000, "issues": 1, "atRisk": 1000 },
+          "other": { "spent": 14000, "budget": 13780, "issues": 0, "atRisk": 0 }
+        }
+      }
+    },
+    {
+      "id": "grant_003",
+      "reference": "EP/T022817/1",
+      "title": "Climate Modelling Framework for UK Agriculture",
+      "funder": "UKRI - NERC",
+      "pi": {
+        "name": "Prof. Sarah Chen",
+        "department": "School of Geography and Environment",
+        "email": "s.chen@example.ac.uk"
+      },
+      "startDate": "2023-01-01",
+      "endDate": "2025-12-31",
+      "fesDeadline": "2026-03-31",
+      "daysUntilDeadline": 430,
+      "totalAwarded": 1245000,
+      "totalSpent": 678450,
+      "fecRate": 0.80,
+      "status": "active",
+      "riskLevel": "low",
+      "summary": {
+        "totalTransactions": 1892,
+        "highRiskCount": 0,
+        "mediumRiskCount": 1,
+        "cleanCount": 1891,
+        "totalAtRisk": 850,
+        "categories": {
+          "staffCosts": { "spent": 456000, "budget": 780000, "issues": 0, "atRisk": 0 },
+          "equipment": { "spent": 125000, "budget": 180000, "issues": 0, "atRisk": 0 },
+          "consumables": { "spent": 45450, "budget": 120000, "issues": 1, "atRisk": 850 },
+          "travel": { "spent": 32000, "budget": 85000, "issues": 0, "atRisk": 0 },
+          "other": { "spent": 20000, "budget": 80000, "issues": 0, "atRisk": 0 }
+        }
+      }
+    }
+  ],
+
+  "issues": [
+    {
+      "id": "issue_001",
+      "grantId": "grant_001",
+      "rowNumber": 1892,
+      "severity": "high",
+      "category": "Staff Costs",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-12-03",
+      "postingDate": "2024-12-05",
+      "description": "Dr. Sarah Chen — November 2024 Salary (20% FTE)",
+      "vendor": "Payroll — Internal Transfer",
+      "amount": 4200.00,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 1 - Research Staff",
+      "poNumber": "N/A — Payroll",
+      "invoiceRef": "PAY-NOV24-SC001",
+      "issue": {
+        "type": "MISSING_TIMESHEET",
+        "title": "No timesheet evidence for November 2024",
+        "description": "Staff cost charged at budgeted FTE (20%) with no timesheet evidence for November 2024. Dr. Chen is allocated across multiple grants and therefore requires monthly timesheet records under UKRI RGC 4.6.",
+        "ruleReference": {
+          "source": "UKRI fEC Grant Terms and Conditions",
+          "section": "RGC 4.6",
+          "text": "Where an individual is working on more than one project, the Research Organisation must maintain records of actual time spent on each project. Timesheets must be signed off and dated within 2 months of the end of the timesheet period.",
+          "url": "https://www.ukri.org/publications/terms-and-conditions-for-research-grants/"
+        },
+        "auditRisk": "Without timesheet evidence, this cost is likely to be disallowed at UKRI Funding Assurance review. Including overhead recovery (60% of staff cost), total exposure is £6,720.",
+        "totalExposure": 6720.00,
+        "exposureCalculation": "£4,200 salary + £2,520 overhead (60%)",
+        "recommendedActions": [
+          "Obtain signed timesheet from Dr. Chen for November 2024",
+          "If timesheet unavailable, adjust charge to reflect actual documented hours",
+          "If variance exceeds 10% from budget, document justification",
+          "Move unevidenced portion to Task 89 (departmental cost) before FES submission"
+        ]
+      },
+      "relatedStaff": {
+        "name": "Dr. Sarah Chen",
+        "staffId": "SC001",
+        "contractedFTE": 1.0,
+        "grantAllocation": 0.20,
+        "otherGrants": ["EP/Y012345/1 (40%)", "BB/X098765/1 (30%)", "Teaching (10%)"],
+        "timesheetStatus": {
+          "september2024": "submitted",
+          "october2024": "submitted", 
+          "november2024": "missing",
+          "december2024": "missing"
+        }
+      }
+    },
+    {
+      "id": "issue_002",
+      "grantId": "grant_001",
+      "rowNumber": 2104,
+      "severity": "high",
+      "category": "Staff Costs",
+      "costType": "Directly Incurred",
+      "transactionDate": "2025-01-03",
+      "postingDate": "2025-01-06",
+      "description": "Dr. James Okafor — December 2024 Salary (30% FTE)",
+      "vendor": "Payroll — Internal Transfer",
+      "amount": 6300.00,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 1 - Research Staff",
+      "poNumber": "N/A — Payroll",
+      "invoiceRef": "PAY-DEC24-JO002",
+      "issue": {
+        "type": "TIMESHEET_VARIANCE",
+        "title": "Timesheet shows 22% FTE, billed at 30%",
+        "description": "December timesheet records 22% FTE on this grant, but payroll charged at budgeted 30%. This 8% variance represents £1,680 potentially ineligible cost. UKRI requires actual costs, not budgeted estimates, for Directly Incurred staff.",
+        "ruleReference": {
+          "source": "UKRI fEC Grant Terms and Conditions Guidance",
+          "section": "Section 2 - Cost Categories",
+          "text": "Directly incurred costs are explicitly identifiable as arising from the conduct of a project, charged as the cash value actually spent and supported by an audit record. Staff costs must be charged on an actual basis rather than budgeted.",
+          "url": "https://www.ukri.org/wp-content/uploads/2021/04/UKRI-021122-fECGrantTermsAndConditionsGuidance.pdf"
+        },
+        "auditRisk": "UKRI Funding Assurance has explicitly warned that charging staff costs on a budgeted basis is a common audit finding. The variance of £1,680 plus overheads (£1,008) totalling £2,688 will likely be disallowed.",
+        "totalExposure": 2688.00,
+        "exposureCalculation": "8% variance × £21,000 monthly salary = £1,680 + £1,008 overhead",
+        "recommendedActions": [
+          "Adjust December charge from 30% to 22% to reflect actual timesheet",
+          "Process correcting journal: Credit £1,680 to grant, Debit to departmental code",
+          "Review January allocation if similar pattern expected",
+          "Update budget forecast for remaining grant period"
+        ]
+      },
+      "relatedStaff": {
+        "name": "Dr. James Okafor",
+        "staffId": "JO002",
+        "contractedFTE": 1.0,
+        "grantAllocation": 0.30,
+        "budgetedFTE": 0.30,
+        "actualFTEDecember": 0.22,
+        "variance": -0.08,
+        "timesheetStatus": {
+          "october2024": "submitted",
+          "november2024": "submitted",
+          "december2024": "submitted — variance flagged"
+        }
+      }
+    },
+    {
+      "id": "issue_003",
+      "grantId": "grant_001",
+      "rowNumber": 3891,
+      "severity": "high",
+      "category": "Staff Costs",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-10-15",
+      "postingDate": "2024-10-17",
+      "description": "Prof. Emma Walsh — Q3 2024 Salary Recharge (15% FTE)",
+      "vendor": "Payroll — Internal Transfer",
+      "amount": 12750.00,
+      "costCentre": "ENGI-1892",
+      "projectTask": "Task 1 - Research Staff",
+      "poNumber": "N/A — Payroll",
+      "invoiceRef": "PAY-Q3-24-EW003",
+      "issue": {
+        "type": "NO_ACTUAL_RECORDS",
+        "title": "Quarterly charge at budgeted rate with no actual time records",
+        "description": "Investigator time charged as Directly Incurred at budgeted 15% FTE for entire quarter. No actual time records maintained. Under TRAC guidance, investigator costs without auditable time records should be classified as Directly Allocated, not Directly Incurred.",
+        "ruleReference": {
+          "source": "UKRI fEC Grant Terms and Conditions Guidance",
+          "section": "Section 2.2 - Investigator Costs",
+          "text": "Where Investigator costs are based on estimates and therefore an auditable record cannot be provided, these costs should be charged as Directly Allocated. Directly Incurred costs must be supported by an audit record.",
+          "url": "https://www.ukri.org/wp-content/uploads/2021/04/UKRI-021122-fECGrantTermsAndConditionsGuidance.pdf"
+        },
+        "auditRisk": "This cost is miscategorised. As Directly Incurred without audit trail, full amount is at risk. If reclassified to Directly Allocated, the amount would be paid at the lesser of actual or budget, protecting the claim.",
+        "totalExposure": 12750.00,
+        "exposureCalculation": "Full quarterly charge — no overhead exposure as investigator cost",
+        "recommendedActions": [
+          "Reclassify from Directly Incurred (Task 1) to Directly Allocated (Task 2)",
+          "Implement prospective timesheet or time allocation for Prof. Walsh",
+          "Review all investigator costs on grant for consistent treatment",
+          "Document methodology if using estimated time allocation"
+        ]
+      },
+      "relatedStaff": {
+        "name": "Prof. Emma Walsh",
+        "staffId": "EW003",
+        "role": "Co-Investigator",
+        "contractedFTE": 1.0,
+        "grantAllocation": 0.15,
+        "chargeMethod": "Quarterly recharge at budgeted %",
+        "timesheetRequired": "Yes — currently not maintained"
+      }
+    },
+    {
+      "id": "issue_004",
+      "grantId": "grant_001",
+      "rowNumber": 2341,
+      "severity": "high",
+      "category": "Equipment",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-09-15",
+      "postingDate": "2024-09-18",
+      "description": "Apple iPad Pro 12.9\" 256GB WiFi + Cellular",
+      "vendor": "Apple Store Online",
+      "amount": 1299.00,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Other Directly Incurred",
+      "poNumber": "PO-2024-089234",
+      "invoiceRef": "INV-APL-892341",
+      "issue": {
+        "type": "INELIGIBLE_EQUIPMENT",
+        "title": "General-purpose computing equipment charged as Direct Cost",
+        "description": "iPad Pro purchased and charged as Directly Incurred equipment. General-purpose computing devices are typically considered indirect costs unless dedicated solely to the project with documented justification. No project-specific justification on file.",
+        "ruleReference": {
+          "source": "UKRI Directly Incurred Costs Guidance",
+          "section": "Other Directly Incurred Costs",
+          "text": "Computing equipment may be included under directly incurred only if dedicated to the project. General purpose computing equipment that could be used for other activities should be covered by indirect costs.",
+          "url": "https://www.ukri.org/councils/epsrc/guidance-for-applicants/costs-you-can-apply-for/directly-incurred-costs/"
+        },
+        "auditRisk": "Without documented project-specific justification, this cost will likely be disallowed as it should be covered by the institution's indirect cost recovery. Full amount at risk.",
+        "totalExposure": 1299.00,
+        "exposureCalculation": "Full purchase price — no overhead as equipment",
+        "recommendedActions": [
+          "Document specific project use case (e.g., dedicated data collection device)",
+          "If general use, recode to departmental equipment budget",
+          "Obtain retrospective approval from PI confirming dedicated project use",
+          "For future purchases, include justification in purchase requisition"
+        ]
+      },
+      "purchaseDetails": {
+        "requisitionedBy": "Dr. Sarah Chen",
+        "approvedBy": "Prof. Emma Richardson",
+        "businessJustification": "Research equipment",
+        "specificProjectUse": "Not documented"
+      }
+    },
+    {
+      "id": "issue_005",
+      "grantId": "grant_001",
+      "rowNumber": 4102,
+      "severity": "high",
+      "category": "Equipment",
+      "costType": "Directly Incurred",
+      "transactionDate": "2025-01-08",
+      "postingDate": "2025-01-10",
+      "description": "Apple MacBook Pro 14\" M3 Pro 18GB/512GB",
+      "vendor": "Apple Store Education",
+      "amount": 2499.00,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Other Directly Incurred",
+      "poNumber": "PO-2025-001234",
+      "invoiceRef": "INV-APL-012345",
+      "issue": {
+        "type": "LATE_PURCHASE",
+        "title": "Equipment purchased in final months of grant",
+        "description": "MacBook Pro purchased in Month 35 of a 36-month grant. Late equipment purchases, particularly computing equipment, attract scrutiny as they may not contribute meaningfully to the funded research before the grant ends.",
+        "ruleReference": {
+          "source": "UKRI Grant Terms and Conditions",
+          "section": "RGC 4.3",
+          "text": "Directly incurred funds must not be used to meet the costs of an activity that will fall outside the grant period. Equipment purchased should be demonstrably required for research activities within the grant period.",
+          "url": "https://www.ukri.org/publications/terms-and-conditions-for-research-grants/"
+        },
+        "auditRisk": "Equipment purchased in final grant months faces heightened audit scrutiny. Combined with lack of project-specific justification, this purchase is high risk for disallowance.",
+        "totalExposure": 2499.00,
+        "exposureCalculation": "Full purchase price",
+        "recommendedActions": [
+          "Document specific research activities requiring this equipment before grant end",
+          "Provide written justification explaining timing of purchase",
+          "If cannot justify, recode to departmental equipment budget",
+          "Consider whether equipment should be returned to funder or retained under asset policy"
+        ]
+      },
+      "purchaseDetails": {
+        "requisitionedBy": "Dr. James Okafor",
+        "approvedBy": "Prof. Emma Richardson",
+        "businessJustification": "Final analysis and write-up",
+        "grantMonthsPurchased": 35,
+        "grantTotalMonths": 36
+      }
+    },
+    {
+      "id": "issue_006",
+      "grantId": "grant_001",
+      "rowNumber": 2892,
+      "severity": "medium",
+      "category": "Consumables",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-08-22",
+      "postingDate": "2024-08-26",
+      "description": "Amazon Business — Office Supplies",
+      "vendor": "Amazon Business UK",
+      "amount": 247.89,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Other Directly Incurred",
+      "poNumber": "PO-2024-067891",
+      "invoiceRef": "INV-AMZ-8923456",
+      "issue": {
+        "type": "NON_ITEMISED_RECEIPT",
+        "title": "Non-itemised receipt — cannot verify eligibility",
+        "description": "Amazon Business order description shows only 'Office Supplies' without itemisation. Audit requires itemised receipts to verify each item's eligibility. General office supplies (stationery, folders, etc.) should typically be covered by indirect costs.",
+        "ruleReference": {
+          "source": "UKRI Funding Assurance Requirements",
+          "section": "Evidence Requirements",
+          "text": "Directly incurred costs must be supported by an audit record including itemised receipts or invoices. Non-itemised documentation does not provide sufficient audit trail.",
+          "url": "https://www.ukri.org/who-we-are/policies-standards-and-data/funding-assurance-programme/"
+        },
+        "auditRisk": "Without itemisation, auditors cannot verify eligibility. Items may include ineligible general office supplies. Medium risk of partial or full disallowance.",
+        "totalExposure": 247.89,
+        "exposureCalculation": "Full amount at risk due to lack of itemisation",
+        "recommendedActions": [
+          "Retrieve itemised receipt from Amazon Business account",
+          "Review items against eligible cost list",
+          "Recode any general office supplies to indirect cost centre",
+          "Implement policy requiring itemised receipts for all purchases"
+        ]
+      }
+    },
+    {
+      "id": "issue_007",
+      "grantId": "grant_001",
+      "rowNumber": 3102,
+      "severity": "medium",
+      "category": "Consumables",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-07-15",
+      "postingDate": "2024-07-18",
+      "description": "Fisher Scientific — Laboratory Notebooks (x50)",
+      "vendor": "Fisher Scientific UK Ltd",
+      "amount": 312.50,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Other Directly Incurred",
+      "poNumber": "PO-2024-054321",
+      "invoiceRef": "INV-FS-7654321",
+      "issue": {
+        "type": "INDIRECT_COST_ITEM",
+        "title": "General laboratory consumable — likely indirect cost",
+        "description": "Laboratory notebooks are general consumables shared across multiple activities. UKRI guidance indicates general office and laboratory consumables should be covered by indirect costs, not charged as directly incurred.",
+        "ruleReference": {
+          "source": "UKRI fEC Grant Terms and Conditions Guidance",
+          "section": "Indirect Costs Definition",
+          "text": "Indirect costs include general office and laboratory consumables. These are not directly related to any one project but are a necessary part of undertaking research activity.",
+          "url": "https://www.ukri.org/wp-content/uploads/2021/04/UKRI-021122-fECGrantTermsAndConditionsGuidance.pdf"
+        },
+        "auditRisk": "General consumables charged as direct costs may be flagged during audit. Lower risk than equipment, but pattern of such charges could trigger broader review.",
+        "totalExposure": 312.50,
+        "exposureCalculation": "Full purchase price",
+        "recommendedActions": [
+          "Review whether notebooks are project-specific (e.g., custom printed)",
+          "If general use, recode to departmental consumables budget",
+          "Document if notebooks are dedicated to specific grant activities",
+          "Review purchasing patterns for similar items"
+        ]
+      }
+    },
+    {
+      "id": "issue_008",
+      "grantId": "grant_001",
+      "rowNumber": 4201,
+      "severity": "medium",
+      "category": "Consumables",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-11-28",
+      "postingDate": "2024-12-02",
+      "description": "Seagate External Hard Drive 4TB USB 3.0",
+      "vendor": "Scan Computers International Ltd",
+      "amount": 189.99,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Other Directly Incurred",
+      "poNumber": "PO-2024-098765",
+      "invoiceRef": "INV-SCAN-234567",
+      "issue": {
+        "type": "GENERAL_IT_EQUIPMENT",
+        "title": "General IT equipment — requires justification",
+        "description": "External storage devices are general-purpose IT equipment. To be eligible as directly incurred, must be dedicated to project data storage with documented justification.",
+        "ruleReference": {
+          "source": "UKRI Directly Incurred Costs Guidance",
+          "section": "Computing Costs",
+          "text": "Computing costs including storage may be directly incurred only where dedicated to the project. General IT equipment should be covered by indirect costs.",
+          "url": "https://www.ukri.org/councils/epsrc/guidance-for-applicants/costs-you-can-apply-for/directly-incurred-costs/"
+        },
+        "auditRisk": "Without documented project-specific use, this purchase may be questioned. Lower value reduces audit priority but contributes to pattern.",
+        "totalExposure": 189.99,
+        "exposureCalculation": "Full purchase price",
+        "recommendedActions": [
+          "Document that drive is dedicated to project data (e.g., sensor recordings)",
+          "Label drive with grant reference for asset tracking",
+          "If general backup device, recode to departmental IT budget"
+        ]
+      }
+    },
+    {
+      "id": "issue_009",
+      "grantId": "grant_001",
+      "rowNumber": 3456,
+      "severity": "medium",
+      "category": "Travel",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-12-08",
+      "postingDate": "2024-12-12",
+      "description": "NeurIPS 2024 Conference Registration — Dr. Chen",
+      "vendor": "NeurIPS Foundation",
+      "amount": 850.00,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Travel and Subsistence",
+      "poNumber": "PO-2024-087654",
+      "invoiceRef": "INV-NIPS-2024-SC",
+      "issue": {
+        "type": "UNAPPROVED_CONFERENCE",
+        "title": "Conference not listed in approved travel plan",
+        "description": "NeurIPS 2024 conference registration charged to grant. Original grant application and approved travel plan identified different conferences (ICRA 2024, IROS 2024). Conference attendance should be individually identified and justified in the proposal.",
+        "ruleReference": {
+          "source": "UKRI Directly Incurred Costs Guidance",
+          "section": "Travel and Subsistence",
+          "text": "Costs for attendance at conferences may be included, where such attendance will be of direct benefit to the research. Conferences should, as far as possible, be individually identified in the proposal and attendance justified.",
+          "url": "https://www.ukri.org/councils/epsrc/guidance-for-applicants/costs-you-can-apply-for/directly-incurred-costs/"
+        },
+        "auditRisk": "Attending conferences not in original proposal requires justification showing direct benefit to research. Without documentation, cost may be questioned.",
+        "totalExposure": 850.00,
+        "exposureCalculation": "Full registration fee",
+        "recommendedActions": [
+          "Document relevance of NeurIPS to grant research objectives",
+          "Note any papers presented or collaborations initiated",
+          "File justification with grant records for audit purposes",
+          "Consider whether GMR (Grant Maintenance Request) was needed"
+        ]
+      }
+    },
+    {
+      "id": "issue_010",
+      "grantId": "grant_001",
+      "rowNumber": 3789,
+      "severity": "medium",
+      "category": "Travel",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-10-15",
+      "postingDate": "2024-10-18",
+      "description": "Taxi Receipts — Various (October 2024)",
+      "vendor": "Multiple — Expense Claim",
+      "amount": 234.50,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Travel and Subsistence",
+      "poNumber": "N/A — Expense Claim",
+      "invoiceRef": "EXP-OCT24-JO002",
+      "issue": {
+        "type": "MISSING_JOURNEY_DETAILS",
+        "title": "Taxi receipts without journey purpose documentation",
+        "description": "Expense claim includes 7 taxi receipts totalling £234.50. Journey purposes not documented on claim. UKRI requires travel costs to evidence value for money and direct relevance to project.",
+        "ruleReference": {
+          "source": "UKRI Funding Assurance",
+          "section": "Travel Costs",
+          "text": "All travel claims should evidence value for money as the primary consideration. Evidence should include purpose of journey and relevance to project activities.",
+          "url": "https://www.ukri.org/who-we-are/policies-standards-and-data/funding-assurance-programme/"
+        },
+        "auditRisk": "Travel claims without documented purpose may be questioned. Taxi costs specifically scrutinised for value for money vs public transport alternatives.",
+        "totalExposure": 234.50,
+        "exposureCalculation": "Full claim amount",
+        "recommendedActions": [
+          "Request Dr. Okafor provide journey purposes retrospectively",
+          "Document why taxi was necessary vs public transport",
+          "Ensure future claims include journey details on submission",
+          "Review expense claim form to require mandatory journey purpose"
+        ]
+      },
+      "expenseDetails": {
+        "claimant": "Dr. James Okafor",
+        "numberOfReceipts": 7,
+        "dateRange": "2024-10-03 to 2024-10-28",
+        "journeyPurposes": "Not documented"
+      }
+    },
+    {
+      "id": "issue_011",
+      "grantId": "grant_001",
+      "rowNumber": 4567,
+      "severity": "medium",
+      "category": "Other",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-09-20",
+      "postingDate": "2024-09-24",
+      "description": "Dr. Liu — Consultancy Services (Data Analysis)",
+      "vendor": "Liu Analytics Ltd",
+      "amount": 3500.00,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Sub-contracting",
+      "poNumber": "PO-2024-076543",
+      "invoiceRef": "INV-LIU-2024-09",
+      "issue": {
+        "type": "NO_DELIVERABLE_EVIDENCE",
+        "title": "Sub-contracted work without deliverable evidence",
+        "description": "Consultancy payment made but no evidence of deliverables received. Sub-contracted work should be supported by contract, statement of work, and evidence of deliverable receipt.",
+        "ruleReference": {
+          "source": "UKRI Grant Terms and Conditions",
+          "section": "Sub-contracting",
+          "text": "Sub-contracted work will be subject to the procurement rules of the research organisation. Evidence of deliverables should be maintained for audit purposes.",
+          "url": "https://www.ukri.org/publications/terms-and-conditions-for-research-grants/"
+        },
+        "auditRisk": "Payment without deliverable evidence may be questioned. Procurement compliance also requires competitive quotes for this value.",
+        "totalExposure": 3500.00,
+        "exposureCalculation": "Full invoice value",
+        "recommendedActions": [
+          "Obtain and file deliverable (report, analysis output, etc.)",
+          "Ensure sub-contract agreement is on file",
+          "Verify procurement requirements were met (quotes if applicable)",
+          "Document how deliverable contributed to research objectives"
+        ]
+      }
+    },
+    {
+      "id": "issue_012",
+      "grantId": "grant_001",
+      "rowNumber": 4890,
+      "severity": "medium",
+      "category": "Other",
+      "costType": "Directly Incurred",
+      "transactionDate": "2024-11-15",
+      "postingDate": "2024-11-19",
+      "description": "Participant Incentive Payments — User Study",
+      "vendor": "Internal Transfer — Petty Cash",
+      "amount": 1200.00,
+      "costCentre": "PHYS-2341",
+      "projectTask": "Task 3 - Other Directly Incurred",
+      "poNumber": "N/A — Petty Cash",
+      "invoiceRef": "PC-NOV24-STUDY",
+      "issue": {
+        "type": "ETHICS_APPROVAL_NOT_FILED",
+        "title": "Participant payments without ethics approval on file",
+        "description": "Participant incentive payments made for user study. Grant records do not include copy of ethics approval. Research involving human participants requires documented ethics approval.",
+        "ruleReference": {
+          "source": "UKRI Terms and Conditions",
+          "section": "Research Ethics and Integrity",
+          "text": "Research Organisations must ensure research is conducted according to appropriate ethical, legal and professional frameworks. Evidence of ethics approval should be maintained.",
+          "url": "https://www.ukri.org/manage-your-award/good-research-conduct/"
+        },
+        "auditRisk": "Participant payments without ethics evidence create compliance risk beyond financial audit. Could trigger broader research governance review.",
+        "totalExposure": 1200.00,
+        "exposureCalculation": "Full payment amount",
+        "recommendedActions": [
+          "Obtain copy of ethics approval and file with grant records",
+          "Verify all participant consent forms are retained",
+          "Confirm participant payment methodology was approved",
+          "Review whether ethics approval reference should be on invoices"
+        ]
+      }
+    }
+  ],
+
+  "transactions": {
+    "description": "Sample of clean transactions to show alongside flagged issues",
+    "samples": [
+      {
+        "rowNumber": 156,
+        "date": "2024-04-15",
+        "description": "Dr. Ahmed Hassan — April 2024 Salary (100% FTE)",
+        "category": "Staff Costs",
+        "amount": 4850.00,
+        "status": "clean",
+        "note": "100% FTE on single grant — no timesheet required"
+      },
+      {
+        "rowNumber": 234,
+        "date": "2024-05-02",
+        "description": "Fisher Scientific — Reagents (Specific to Grant)",
+        "category": "Consumables",
+        "amount": 892.45,
+        "status": "clean",
+        "note": "Project-specific consumables with itemised receipt"
+      },
+      {
+        "rowNumber": 567,
+        "date": "2024-06-18",
+        "description": "ICRA 2024 Conference Registration — Prof. Richardson",
+        "category": "Travel",
+        "amount": 650.00,
+        "status": "clean",
+        "note": "Conference listed in approved travel plan"
+      },
+      {
+        "rowNumber": 891,
+        "date": "2024-07-22",
+        "description": "Sigma-Aldrich — Specialist Chemicals (Project-specific)",
+        "category": "Consumables",
+        "amount": 2341.89,
+        "status": "clean",
+        "note": "Research consumables with documented project use"
+      },
+      {
+        "rowNumber": 1234,
+        "date": "2024-08-10",
+        "description": "Train Tickets — London to Edinburgh (Standard Class)",
+        "category": "Travel",
+        "amount": 156.80,
+        "status": "clean",
+        "note": "Standard class travel with journey purpose documented"
+      }
+    ]
+  },
+
+  "timesheetTracker": {
+    "grantId": "grant_001",
+    "staffRequiringTimesheets": [
+      {
+        "name": "Dr. Sarah Chen",
+        "staffId": "SC001",
+        "grantFTE": "20%",
+        "status": "overdue",
+        "overdueMonths": ["November 2024", "December 2024"],
+        "lastSubmitted": "October 2024",
+        "remindersSent": 3
+      },
+      {
+        "name": "Dr. James Okafor",
+        "staffId": "JO002",
+        "grantFTE": "30%",
+        "status": "variance",
+        "varianceDetails": "December: 22% actual vs 30% budgeted",
+        "lastSubmitted": "December 2024",
+        "remindersSent": 0
+      },
+      {
+        "name": "Prof. Emma Walsh",
+        "staffId": "EW003",
+        "grantFTE": "15%",
+        "status": "not_maintained",
+        "note": "No timesheet process in place — quarterly estimates used",
+        "lastSubmitted": "N/A",
+        "remindersSent": 0
+      },
+      {
+        "name": "Dr. Ahmed Hassan",
+        "staffId": "AH004",
+        "grantFTE": "100%",
+        "status": "not_required",
+        "note": "100% FTE on single grant — timesheet not required",
+        "lastSubmitted": "N/A",
+        "remindersSent": 0
+      }
+    ],
+    "summary": {
+      "total": 4,
+      "compliant": 1,
+      "overdue": 1,
+      "variance": 1,
+      "notMaintained": 1,
+      "notRequired": 1
+    }
+  },
+
+  "auditReadinessScore": {
+    "grantId": "grant_001",
+    "overallScore": 68,
+    "maxScore": 100,
+    "rating": "Needs Attention",
+    "breakdown": {
+      "staffCostEvidence": {
+        "score": 55,
+        "maxScore": 100,
+        "issues": "3 staff members with timesheet issues"
+      },
+      "expenditureClassification": {
+        "score": 72,
+        "maxScore": 100,
+        "issues": "Equipment and consumables require review"
+      },
+      "documentationCompleteness": {
+        "score": 78,
+        "maxScore": 100,
+        "issues": "Some receipts and deliverables missing"
+      },
+      "procurementCompliance": {
+        "score": 85,
+        "maxScore": 100,
+        "issues": "Minor documentation gaps"
+      },
+      "timesheetCompliance": {
+        "score": 50,
+        "maxScore": 100,
+        "issues": "50% of required timesheets are problematic"
+      }
+    }
+  },
+
+  "fesPreview": {
+    "grantId": "grant_001",
+    "submissionReady": false,
+    "blockers": [
+      "2 staff members have missing timesheets for recent months",
+      "£8,449 in equipment costs require justification or recoding",
+      "£4,891 in consumables may need reclassification"
+    ],
+    "warnings": [
+      "Conference attendance requires documented justification",
+      "Sub-contracted deliverables should be filed",
+      "Ethics approval to be added to grant records"
+    ],
+    "estimatedClaimableAmount": 800000,
+    "currentlyAtRisk": 47291,
+    "potentialRecovery": 41000,
+    "note": "If all recommended actions completed, exposure reduces from £47,291 to estimated £6,291"
+  },
+
+  "ui": {
+    "funderOptions": [
+      { "id": "ukri_epsrc", "name": "UKRI - EPSRC", "enabled": true },
+      { "id": "ukri_mrc", "name": "UKRI - MRC", "enabled": true },
+      { "id": "ukri_bbsrc", "name": "UKRI - BBSRC", "enabled": true },
+      { "id": "ukri_nerc", "name": "UKRI - NERC", "enabled": true },
+      { "id": "ukri_esrc", "name": "UKRI - ESRC", "enabled": true },
+      { "id": "ukri_ahrc", "name": "UKRI - AHRC", "enabled": true },
+      { "id": "ukri_stfc", "name": "UKRI - STFC", "enabled": true },
+      { "id": "ukri_innovate", "name": "UKRI - Innovate UK", "enabled": true },
+      { "id": "wellcome", "name": "Wellcome Trust", "enabled": false },
+      { "id": "horizon", "name": "Horizon Europe", "enabled": false }
+    ],
+    "severityLabels": {
+      "high": { "label": "High Risk", "color": "#DC2626", "icon": "🔴" },
+      "medium": { "label": "Medium Risk", "color": "#F59E0B", "icon": "🟡" },
+      "low": { "label": "Low Risk", "color": "#10B981", "icon": "🟢" }
+    },
+    "categoryIcons": {
+      "Staff Costs": "👤",
+      "Equipment": "🖥️",
+      "Consumables": "🧪",
+      "Travel": "✈️",
+      "Other": "📋"
+    }
+  }
+}
